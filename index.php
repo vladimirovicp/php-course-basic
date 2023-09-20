@@ -31,10 +31,46 @@
   </head>
   <body>
 
-   
+  <?php
+    const
+    AUTHOR = "Пётр Владимирович",
+    YEAR = 2023,
+    DBHOST = 'localhost',
+    DBLOGIN = 'root',
+    DBPASS = '',
+    DBNAME = 'first';
 
-      
+    $firstName = 'Пётр';
+    $lastName = 'Владимирович'; //не люблю указывать фамилию
+    $email = 'vladimirovicp70@gmail.com'; //Почта для обучения
+    $address = 'г. Саратов';
 
+    //3.Создайте переменную $successOrder , со строкой, содержащей переменную $firstName.
+    $successOrder = $firstName;
+
+    // Если нужно было создать ссылку на переменую то $successOrder =& $firstName;
+
+    //4. Создайте массив строк $categories с категориями книг и массив $publisher с
+    //названиями издательств, выведите содержимое массивов без использовани циклов.
+    $categories = ['Action', 'Another action', 'Something else here'];
+    $publisher = ['Первое', 'Второе', 'Третье'];
+
+    //5.Создайте ассоциативный массив $book , описывающий отдельную книгу
+    //(должен содержать ключи idbook, title,author, price, description).
+    $book = array(
+          "idbook" => 1,
+          "title" => 'PHP',
+          "author" => 'dfgdfg',
+          "price" => 1200,
+          "description" => 'This is a wider card with supporting text below as a natural lead-in to additional content.'
+     );
+
+     //6. Если будет время, создайте ассоциативный массив для верхнего меню $menu.
+     $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
+     //Создайте строковую переменную $page со значением index
+
+
+  ?>
  
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -49,16 +85,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="delivery.html">Доставка</a>
+        <a class="nav-link" href="delivery.php">Доставка</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contacts.html">Контакты</a>
+        <a class="nav-link" href="contacts.php">Контакты</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.html">Войти</a>
+        <a class="nav-link" href="login.php">Войти</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="basket.html">Корзина</a>
+        <a class="nav-link" href="basket.php">Корзина</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -240,7 +276,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span class="text-muted">2020 &copy; Интернет-магазин Книжка</span>
+      <span class="text-muted"><?=YEAR?> &copy;  <?=AUTHOR?></span>
     </div>
   </footer>
 
