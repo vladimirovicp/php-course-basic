@@ -1,3 +1,6 @@
+<?php
+    include 'config.php'
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,91 +35,8 @@
   <body>
 
   <?php
-    const
-    AUTHOR = "Пётр Владимирович",
-    YEAR = 2023,
-    DBHOST = 'localhost',
-    DBLOGIN = 'root',
-    DBPASS = '',
-    DBNAME = 'first';
-
-    $firstName = 'Пётр';
-    $lastName = 'Владимирович'; //не люблю указывать фамилию
-    $email = 'vladimirovicp70@gmail.com'; //Почта для обучения
-    $address = 'г. Саратов';
-
-    //3.Создайте переменную $successOrder , со строкой, содержащей переменную $firstName.
-    $successOrder = $firstName;
-
-    // Если нужно было создать ссылку на переменую то $successOrder =& $firstName;
-
-    //4. Создайте массив строк $categories с категориями книг и массив $publisher с
-    //названиями издательств, выведите содержимое массивов без использовани циклов.
-    $categories = ['Action', 'Another action', 'Something else here'];
-    $publisher = ['Первое', 'Второе', 'Третье'];
-
-    //5.Создайте ассоциативный массив $book , описывающий отдельную книгу
-    //(должен содержать ключи idbook, title,author, price, description).
-    $book = array(
-          "idbook" => 1,
-          "title" => 'PHP',
-          "author" => 'dfgdfg',
-          "price" => 1200,
-          "description" => 'This is a wider card with supporting text below as a natural lead-in to additional content.'
-     );
-
-     //6. Если будет время, создайте ассоциативный массив для верхнего меню $menu.
-     $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
-     //Создайте строковую переменную $page со значением index
-
-    // №1.3 4. При помощи операции конкатенации, соберите строку склеенную из переменных $firstName , $lastName , $email , $address .
-
-        $mainInfo = $firstName . ' ' . $lastName . ' ' . $email . ' ' . $address;
-        //$mainInfo ="$firstName  $lastName  $email  $address"; // более удобный вариант
-        //echo $mainInfo;
-
+    include 'inc/nav.inc.php';
   ?>
- 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-  <a class="navbar-brand" href="/">Интернет-магазин Книжка</a>    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="книгу.." aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти!</button>
-    </form>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="delivery.php">Доставка</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contacts.php">Контакты</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Войти</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="basket.php">Корзина</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-  </div>
-</nav>
 
 <div class="container">
 
@@ -279,11 +199,9 @@
 
   </div><!-- /.container -->
 
-  <footer class="footer">
-    <div class="container">
-      <span class="text-muted"><?=YEAR?> &copy;  <?=AUTHOR?></span>
-    </div>
-  </footer>
+      <?php
+        include 'inc/footer.inc.php';
+      ?>
 
 
     <!-- Optional JavaScript -->
