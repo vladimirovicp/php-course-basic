@@ -69,6 +69,11 @@
      $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
      //Создайте строковую переменную $page со значением index
 
+    // №1.3 4. При помощи операции конкатенации, соберите строку склеенную из переменных $firstName , $lastName , $email , $address .
+
+        $mainInfo = $firstName . ' ' . $lastName . ' ' . $email . ' ' . $address;
+        //$mainInfo ="$firstName  $lastName  $email  $address"; // более удобный вариант
+        //echo $mainInfo;
 
   ?>
  
