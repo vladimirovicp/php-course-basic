@@ -1,5 +1,6 @@
 <?php
-    include 'config.php'
+    include 'config.php';
+    $name_file =  basename(__FILE__, ".php");
 ?>
 
 <!doctype html>
@@ -40,7 +41,6 @@
     </style>
   </head>
   <body>
-
   <div class="container py-5">
       <h2 class="text-center">Вывод моих данных</h2>
   <?php
@@ -91,17 +91,8 @@
       if( ($newNam % 10) === 1){
           echo 'true';
       }
-
-
-
-
-
-
-
-
   ?>
   </div>
-
 
 
 
@@ -113,8 +104,28 @@
 
 
 <div class="container">
+    <h1><?php include "inc/title.inc.php";?></h1>
   <div class="py-5 text-center">
     <h2>Оформление заказа</h2>
+      <?php
+        $numProduct = 3;
+        $numProduct_hundred = 5 % 100;
+        $numProduct_prefix = NULL;
+
+        if ($numProduct_hundred > 10 && $numProduct_hundred < 15)
+            $numProduct__prefix = 'товаров';
+        else{
+            $numProduct_ten = $numProduct % 10;
+
+            if($numProduct_ten == 1)
+                $numProduct__prefix = 'товар';
+            elseif($numProduct_ten >=2 && $numProduct_ten<=4)
+                $numProduct__prefix = 'товара';
+            else
+                $numProduct__prefix = 'товаров';
+        }
+      ?>
+    <h3>В корзине <?= "$numProduct $numProduct__prefix"?></h3>
     <p class="lead">Внимательно заполните поля формы, проверьте корректность введённых данных и позиции товаров и их количество.</p>
   </div>
 

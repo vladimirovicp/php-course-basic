@@ -2,6 +2,7 @@
     const
         AUTHOR = "Пётр Владимирович",
         YEAR = 2023,
+
         DBHOST = 'localhost',
         DBLOGIN = 'root',
         DBPASS = '',

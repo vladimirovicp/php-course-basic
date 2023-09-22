@@ -1,5 +1,6 @@
 <?php
-    include 'config.php'
+    include 'config.php';
+    $name_file =  basename(__FILE__, ".php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,18 +40,12 @@
     </style>
   </head>
   <body>
-
-
-
-
-
-
   <?php
     include 'inc/nav.inc.php';
   ?>
 
 <div class="container">
-<h1>Контакты</h1>
+    <h1><?php include "inc/title.inc.php";?></h1>
 
 <div class="row">
   <div class="col-md-6">

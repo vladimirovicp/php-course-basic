@@ -1,5 +1,6 @@
 <?php
-    include 'config.php'
+    include 'config.php';
+    $name_file =  basename(__FILE__, ".php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,10 +52,11 @@
 
 <div class="container">
 
+
 <form class="form-signin">
   <div class="text-center mb-4">
     <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
+    <h1 class="h3 mb-3 font-weight-normal"><?php include "inc/title.inc.php"; ?></h1>
     <p>Укажите свой адрес <code>электронной</code> почты и пароль</p></p>
   </div>
 
