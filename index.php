@@ -1,6 +1,7 @@
 <?php
     include 'config.php';
     $name_file =  basename(__FILE__, ".php");
+    $page = 'index';
 ?>
 <!doctype html>
 <html lang="en">
@@ -48,85 +49,32 @@
 
 <div class="col-md-9 col-sm-9 ">
     <h1><?php include "inc/title.inc.php";?></h1>
-  <div class="card-deck"> 
-      <div class="card">        
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">1200руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: dfgdfg</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. Издательство: <a href="#">Полезное</a></p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-       </div>
-
-      <div class="card">
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">800руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: sdgfgfg</small></p>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">2100руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: dfgd</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-      </div>
-      
-  </div>
 
 
-  <div class="card-deck">
-
-      <div class="card">        
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">1200руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: dfgdfg</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. Издательство: <a href="#">Полезное</a></p>
+    <div class="card-deck">
+    <?php
+    foreach($books as $key => $book){
+        if(++$key % 3 === 1){
+            echo '</div>';
+            echo '<div class="card-deck">';
+        }
+        ?>
+        <div class="card">
+            <div class="card-body">
+                <img src="http://placehold.it/150x220"  alt="...">
+                <h3 class="card-title"><?=$book['price']?>руб</h3>
+                <p class="card-text"><small class="text-muted">Автор: <?=$book['author']?></small></p>
+                <p class="card-text"><?=$book['description']?>. Издательство: <a href="#">Полезное</a></p>
+            </div>
+            <div class="card-footer">
+<!--                <button type="button" class="btn btn-primary">В корзину</button>-->
+                <a href="?add=<?=$book['idbook']?>" class="btn btn-primary">В корзину</a>
+            </div>
         </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-       </div>
-
-      <div class="card">
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">800руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: sdgfgfg</small></p>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <img src="http://placehold.it/150x220"  alt="...">
-          <h3 class="card-title">2100руб</h3>
-          <p class="card-text"><small class="text-muted">Автор: dfgd</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-primary">В корзину</button>
-        </div>
-      </div>
-      
-  </div>
+        <?php
+    }
+    ?>
+    </div>
 
 
 </div>

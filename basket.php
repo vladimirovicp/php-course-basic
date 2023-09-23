@@ -1,6 +1,7 @@
 <?php
     include 'config.php';
     $name_file =  basename(__FILE__, ".php");
+    $page = 'basket';
 ?>
 
 <!doctype html>
@@ -136,29 +137,54 @@
         <span class="badge badge-secondary badge-pill">2</span>
       </h4>
       <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Название первой книги </h6>
-            <small class="text-muted">краткое необходимое описание</small>
-          </div>
-          <span class="text-muted">1500руб. * 1шт</span>
-          <span class="text-muted">1500руб.</span>
-          <span ><a href="#delete" class="btn btn-success btn-sm ">Удалить</a></span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Название второй книги</h6>
-            <small class="text-muted">краткое необходимое описание</small>
-          </div>
-          <span class="text-muted">600руб. * 2шт</span>
 
-          <span class="text-muted">1200руб.</span>
-          <span ><a href="#delete" class="btn btn-success btn-sm ">Удалить</a></span>
-        </li>
+          <?php
+            $summa = 0;
+              for($i = 1; $i<4; $i++){
+                  //$books[$i];
+                  $quantity = rand(1, 4);
+          ?>
+
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                      <h6 class="my-0"><?=$books[$i]['title']?></h6>
+                      <small class="text-muted"><?=$books[$i]['description']?></small>
+                  </div>
+                  <span class="text-muted"><?=$books[$i]['price']?>руб. * <?=$quantity;?>шт</span>
+                  <span class="text-muted"><?=$books[$i]['price'] * $quantity?>руб.</span>
+                  <span ><a href="#delete" class="btn btn-success btn-sm ">Удалить</a></span>
+              </li>
+
+          <?php
+                  $summa += $books[$i]['price'] * $quantity;
+          }
+
+          ?>
+
+<!--        <li class="list-group-item d-flex justify-content-between lh-condensed">-->
+<!--          <div>-->
+<!--            <h6 class="my-0">Название первой книги </h6>-->
+<!--            <small class="text-muted">краткое необходимое описание</small>-->
+<!--          </div>-->
+<!--          <span class="text-muted">1500руб. * 1шт</span>-->
+<!--          <span class="text-muted">1500руб.</span>-->
+<!--          <span ><a href="#delete" class="btn btn-success btn-sm ">Удалить</a></span>-->
+<!--        </li>-->
+<!---->
+<!--        <li class="list-group-item d-flex justify-content-between lh-condensed">-->
+<!--          <div>-->
+<!--            <h6 class="my-0">Название второй книги</h6>-->
+<!--            <small class="text-muted">краткое необходимое описание</small>-->
+<!--          </div>-->
+<!--          <span class="text-muted">600руб. * 2шт</span>-->
+<!---->
+<!--          <span class="text-muted">1200руб.</span>-->
+<!--          <span ><a href="#delete" class="btn btn-success btn-sm ">Удалить</a></span>-->
+<!--        </li>-->
 
         <li class="list-group-item d-flex justify-content-between">
           <span>Всего: </span>
-          <strong>2700руб.</strong>
+          <strong><?=$summa?>руб.</strong>
         </li>
       </ul>
 

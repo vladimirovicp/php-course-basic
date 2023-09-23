@@ -18,21 +18,68 @@
 
         //4. Создайте массив строк $categories с категориями книг и массив $publisher с
         //названиями издательств, выведите содержимое массивов без использовани циклов.
-        $categories = ['Action', 'Another action', 'Something else here'];
+        $categories = ['Action1', 'Another action1', 'Something else here1'];
         $publisher = ['Первое', 'Второе', 'Третье'];
 
         //5.Создайте ассоциативный массив $book , описывающий отдельную книгу
         //(должен содержать ключи idbook, title,author, price, description).
-        $book = array(
-            "idbook" => 1,
-            "title" => 'PHP',
-            "author" => 'dfgdfg',
-            "price" => 1200,
-            "description" => 'This is a wider card with supporting text below as a natural lead-in to additional content.'
-        );
+//        $book = array(
+//            "idbook" => 1,
+//            "title" => 'PHP',
+//            "author" => 'dfgdfg',
+//            "price" => 1200,
+//            "description" => 'This is a wider card with supporting text below as a natural lead-in to additional content.'
+//        );
+
+        $books = [
+            [
+                "idbook" => 1,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ],
+            [
+                "idbook" => 2,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ],
+            [
+                "idbook" => 3,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ],
+            [
+                "idbook" => 4,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ],
+            [
+                "idbook" => 5,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ],
+            [
+                "idbook" => 6,
+                "title" => 'Создаем динамические веб-сайты с помощью PHP, MySQL, JavaScript, CSS и HTML5.',
+                "author" => 'Никсон Робин',
+                "price" => 1950,
+                "description" => 'Новое издание бестселлера описывает как клиентские, так и серверные аспекты веб-разработки. ...'
+            ]
+        ];
+
 
         //6. Если будет время, создайте ассоциативный массив для верхнего меню $menu.
         $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
+
         //Создайте строковую переменную $page со значением index
         $page = 'index';
 

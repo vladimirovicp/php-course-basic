@@ -2,24 +2,16 @@
     <h4>Категория</h4>
 
     <?php
-    if (empty($categories)){
-        echo 'элементов нет';
-    } else{?>
-        <div class="row">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    <?php
-    }
+        if (empty($categories)){
+            echo 'элементов нет';
+        } else{
+            echo "<div class=\"row\">";
+            foreach($categories as $value){
+                echo "<a class=\"dropdown-item\" href=\"#\">$value</a>";
+            }
+            echo "</div>";
+        }
     ?>
-
 
     <hr>
 
@@ -46,36 +38,22 @@
 
     <div class="row">
         <?php
-
-
-
             if (empty($publisher)){
             echo 'элементов нет';
-            } else{?>
-            <ul class="list-group col-md-12 col-sm-12">
-                <li class="list-group-item">
-                    <input type="checkbox"   id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Первое</label>
-                </li>
-                <li class="list-group-item">
-                    <input type="checkbox" id="exampleCheck2">
-                    <label class="form-check-label" for="exampleCheck2">Второе</label>
-                </li>
-                <li class="list-group-item">
-                    <input type="checkbox" id="exampleCheck3">
-                    <label class="form-check-label" for="exampleCheck3">Третье</label>
-                </li>
-                <li class="list-group-item">
-                    <button type="button" class="btn btn-success">Найти</button>
-                </li>
-            </ul>
-        <?php
+            } else{
+                echo "<ul class=\"list-group col-md-12 col-sm-12\">";
+                foreach ($publisher as $key => $value){
+                    $id = ++$key;
+                    echo "<li class=\"list-group-item\">";
+                        echo "<input type=\"checkbox\" id=\"exampleCheck{$id}\"> ";
+                        echo "<label class=\"form-check-label\" for=\"exampleCheck{$id}\">$value</label>";
+                    echo "</li>";
+                }
+                echo "<li class=\"list-group-item\"><button type=\"button\" class=\"btn btn-success\">Найти</button></li>";
+                echo "</ul>";
             }
         ?>
-
-
     </div>
     <hr>
-
 
 </div>

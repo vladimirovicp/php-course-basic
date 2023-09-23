@@ -1,6 +1,7 @@
 <?php
     include 'config.php';
     $name_file =  basename(__FILE__, ".php");
+    $page = 'contacts';
 ?>
 <!doctype html>
 <html lang="en">
