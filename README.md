@@ -11,6 +11,7 @@
 >* Практическая №2.1: Управляющие конструкции if и switch 
 >  * [Файлы](https://github.com/vladimirovicp/php-course-basic/tree/lab2.1)
 >  * [Отчет](https://github.com/vladimirovicp/php-course-basic/blob/lab2.1/doc/lab2.1.md) 
+>* [Практическая №2.2](https://github.com/vladimirovicp/php-course-basic/tree/lab2.2)
 
 
 ## Функции
