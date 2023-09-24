@@ -122,6 +122,7 @@ mb_convert_encoding($str, "UTF-8", "cp1251");
     $file = basename($path, ".php");  // $file is set to "index"
 ?>
 ```
+>* trim — Удаляет пробелы (или другие символы) из начала и конца строки
 
 ## Предопределённые константы
 >* ``` echo 'Версия PHP: ' . PHP_VERSION, '<hr>';```

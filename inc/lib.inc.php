@@ -41,7 +41,11 @@
     }
 
     function saveOrder($firstName , $lastName , $email , $address){
-        echo "$firstName $lastName $email $address";
+
+        $str = "$firstName $lastName $email $address";
+        file_put_contents(ORDERS,date('d/m/y H:i') . ': ' .$str);
+        echo $str;
+
         return true;
     }
 

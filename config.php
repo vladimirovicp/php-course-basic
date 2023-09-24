@@ -10,10 +10,19 @@
         DBPASS = '',
         DBNAME = 'first';
 
-        $firstName = 'Пётр';
-        $lastName = 'Владимирович'; //не люблю указывать фамилию
-        $email = 'vladimirovicp70@gmail.com'; //Почта для обучения
-        $address = 'г. Саратов';
+    const ORDERS = 'orders.txt';
+
+    $firstName = '   Пётр              ';
+    $lastName = 'Владимирович'; //не люблю указывать фамилию
+    $email = 'vladimirovicp70@gmail.com'; //Почта для обучения
+    $address = 'г. Саратов';
+
+    $firstName = strip_tags(trim($firstName));
+    $lastName = strip_tags(trim($lastName));
+    $email = strip_tags(trim($email));
+    $address = strip_tags(trim($address));
+
+
 
         //3.Создайте переменную $successOrder , со строкой, содержащей переменную $firstName.
         $successOrder = $firstName;
@@ -68,9 +77,9 @@
             ]
         ];
 
-
         //Создайте ассоциативный массив для верхнего меню $menu.
         $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
+
 
         // №1.3 4. При помощи операции конкатенации, соберите строку склеенную из переменных $firstName , $lastName , $email , $address .
         $mainInfo = $firstName . ' ' . $lastName . ' ' . $email . ' ' . $address;

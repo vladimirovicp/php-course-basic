@@ -46,6 +46,17 @@
     <?php echo calcAmount(5); ?>
     <?php echo calcAmount(10); ?>
 
+    <?php echo trim($firstName); ?>
+    <?php
+    echo trim('   0000000  ');
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //saveOrder($firstName , $lastName , $email , $address);
+
+    //echo date('d/m/y H:i');
+
+    ?>
+
 <div class="row">
     <?php
         include 'inc/left-aside.inc.php';
