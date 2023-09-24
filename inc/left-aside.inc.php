@@ -1,17 +1,7 @@
 <div class="col-md-3 col-sm-3 ">
     <h4>Категория</h4>
 
-    <?php
-        if (empty($categories)){
-            echo 'элементов нет';
-        } else{
-            echo "<div class=\"row\">";
-            foreach($categories as $value){
-                echo "<a class=\"dropdown-item\" href=\"#\">$value</a>";
-            }
-            echo "</div>";
-        }
-    ?>
+    <?php renderCategories($categories); ?>
 
     <hr>
 
@@ -37,22 +27,7 @@
     <h4>Издательство</h4>
 
     <div class="row">
-        <?php
-            if (empty($publisher)){
-            echo 'элементов нет';
-            } else{
-                echo "<ul class=\"list-group col-md-12 col-sm-12\">";
-                foreach ($publisher as $key => $value){
-                    $id = ++$key;
-                    echo "<li class=\"list-group-item\">";
-                        echo "<input type=\"checkbox\" id=\"exampleCheck{$id}\"> ";
-                        echo "<label class=\"form-check-label\" for=\"exampleCheck{$id}\">$value</label>";
-                    echo "</li>";
-                }
-                echo "<li class=\"list-group-item\"><button type=\"button\" class=\"btn btn-success\">Найти</button></li>";
-                echo "</ul>";
-            }
-        ?>
+        <?php renderPublisher($publisher); ?>
     </div>
     <hr>
 

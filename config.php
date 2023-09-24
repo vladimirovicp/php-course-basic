@@ -1,4 +1,6 @@
 <?php
+    include 'inc/lib.inc.php';
+
     const
         AUTHOR = "Пётр Владимирович",
         YEAR = 2023,
@@ -20,16 +22,6 @@
         //названиями издательств, выведите содержимое массивов без использовани циклов.
         $categories = ['Action1', 'Another action1', 'Something else here1'];
         $publisher = ['Первое', 'Второе', 'Третье'];
-
-        //5.Создайте ассоциативный массив $book , описывающий отдельную книгу
-        //(должен содержать ключи idbook, title,author, price, description).
-//        $book = array(
-//            "idbook" => 1,
-//            "title" => 'PHP',
-//            "author" => 'dfgdfg',
-//            "price" => 1200,
-//            "description" => 'This is a wider card with supporting text below as a natural lead-in to additional content.'
-//        );
 
         $books = [
             [
@@ -77,11 +69,8 @@
         ];
 
 
-        //6. Если будет время, создайте ассоциативный массив для верхнего меню $menu.
+        //Создайте ассоциативный массив для верхнего меню $menu.
         $menu = [ "Доставка" => 'delivery.php', 'Контакты' => 'contacts.php', 'Войти' => 'login.php', 'Корзина'=>'basket.php'];
-
-        //Создайте строковую переменную $page со значением index
-        $page = 'index';
 
         // №1.3 4. При помощи операции конкатенации, соберите строку склеенную из переменных $firstName , $lastName , $email , $address .
         $mainInfo = $firstName . ' ' . $lastName . ' ' . $email . ' ' . $address;

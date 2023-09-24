@@ -9,16 +9,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <?php
-                    foreach($menu as $key => $value){
-                        $active = NULL;
-                        if($page . '.php' === $value)
-                            $active = ' active';
-                        echo "<li class=\"nav-item{$active}\">";
-                            echo "<a class=\"nav-link\" href=\"$value\">$key</a>";
-                       echo "</li>";
-                    }
-                ?>
+                <?php renderMenu($menu); ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
