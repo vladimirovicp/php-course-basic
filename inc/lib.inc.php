@@ -42,16 +42,39 @@
 
     function saveOrder($firstName , $lastName , $email , $address){
 
-        $str = "$firstName $lastName $email $address";
-        file_put_contents(ORDERS,date('d/m/y H:i') . ': ' .$str);
+        $str = "$firstName; $lastName; $email; $address";
+        file_put_contents(ORDERS,date('d/m/y H:i') . ';' .$str);
         echo $str;
 
         return true;
     }
 
     //6. Создайте функцию getBooksByCategories( $category ), которая возвращает тестовый массив типа $books.
-    function getBooksByCategories($category){
-            //Не понял задания!
+    //function getBooksByCategories($category){
+    function getBooksByCategories(){
+        echo "<div class=\"card-deck\">";
+
+        global $books;
+        foreach($books as $key => $book){
+            if(++$key % 3 === 1){
+                echo '</div>';
+                echo '<div class="card-deck">';
+            }
+            echo "<div class=\"card\">
+                <div class=\"card-body\">
+                    <img src=\"http://placehold.it/150x220\"  alt=\"...\">
+                    <h3 class=\"card-title\">{$book['price']}руб</h3>
+                    <p class=\"card-text\"><small class=\"text-muted\">Автор: {$book['author']}</small></p>
+                    <p class=\"card-text\">{$book['description']} . Издательство: <a href=\"#\">Полезное</a></p>
+                </div>
+                <div class=\"card-footer\">
+                    <a href=\"?add={$book['idbook']}\" class=\"btn btn-primary\">В корзину</a>
+                </div>
+            </div>";
+        }
+        echo "</div>";
+
+
     }
 
     //7. Если будет время, создайте функцию calcAmount( $delta = 0), которая
@@ -61,5 +84,14 @@
         static $result;
         $result += $delta;
         return $result;
+    }
+
+    //3.2 5. Создайте функции getParam() и postParam() с объявлением обнуляемого типа
+    function getParam(){
+
+    }
+
+    function postParam(){
+
     }
 ?>

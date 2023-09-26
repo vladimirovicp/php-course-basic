@@ -6,8 +6,8 @@
     //echo $namePage;
     //echo NAMEFILE = basename(__FILE__, ".php"),;
 
-
-    switch (basename($name_file, ".php")){
+    global $page;
+    switch (basename($page, ".php")){
         case 'index': $currentPage = 'Главная'; break;
         case 'basket': $currentPage = 'Корзина'; break;
         case 'contacts': $currentPage = 'Контакты'; break;

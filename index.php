@@ -1,6 +1,6 @@
 <?php
     include 'config.php';
-    $name_file =  basename(__FILE__, ".php");
+    //$name_file =  basename(__FILE__, ".php");
     $page = 'index';
 ?>
 <!doctype html>
@@ -55,6 +55,13 @@
 
     //echo date('d/m/y H:i');
 
+    $file = file_get_contents(ORDERS);
+    //explode($delimiter, $str)
+
+    //echo $file;
+    $input = explode(";", $file);
+    print_r($input);
+
     ?>
 
 <div class="row">
@@ -65,32 +72,10 @@
 <div class="col-md-9 col-sm-9 ">
     <h1><?php include "inc/title.inc.php";?></h1>
 
-
-    <div class="card-deck">
     <?php
-        global $books;
-        foreach($books as $key => $book){
-            if(++$key % 3 === 1){
-                echo '</div>';
-                echo '<div class="card-deck">';
-        }
+    getBooksByCategories();
     ?>
-        <div class="card">
-            <div class="card-body">
-                <img src="http://placehold.it/150x220"  alt="...">
-                <h3 class="card-title"><?=$book['price']?>руб</h3>
-                <p class="card-text"><small class="text-muted">Автор: <?=$book['author']?></small></p>
-                <p class="card-text"><?=$book['description']?>. Издательство: <a href="#">Полезное</a></p>
-            </div>
-            <div class="card-footer">
-<!--                <button type="button" class="btn btn-primary">В корзину</button>-->
-                <a href="?add=<?=$book['idbook']?>" class="btn btn-primary">В корзину</a>
-            </div>
-        </div>
-        <?php
-    }
-    ?>
-    </div>
+
 
 
 </div>

@@ -1,7 +1,11 @@
 <div class="col-md-3 col-sm-3 ">
     <h4>Категория</h4>
 
-    <?php renderCategories($categories); ?>
+
+    <?php
+        global $categories;
+        renderCategories($categories);
+    ?>
 
     <hr>
 

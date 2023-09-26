@@ -1,6 +1,6 @@
 <?php
     include 'config.php';
-    $name_file =  basename(__FILE__, ".php");
+    //$name_file =  basename(__FILE__, ".php");
     $page = 'login';
 ?>
 <!doctype html>
