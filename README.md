@@ -14,6 +14,9 @@
 >* [Практическая №2.2](https://github.com/vladimirovicp/php-course-basic/tree/lab2.2)
 >* [Домашние задания](https://github.com/vladimirovicp/php-course-basic/blob/main/doc/homework2.md)
 
+>* [Практическая №3.1: Создание собственных функций](https://github.com/vladimirovicp/php-course-basic/tree/lab3.1)
+>* [Практическая №3.2: Использование встроенных функций](https://github.com/vladimirovicp/php-course-basic/tree/lab3.2)
+
 
 ## Example
 >* Глобальная переменная в функции
