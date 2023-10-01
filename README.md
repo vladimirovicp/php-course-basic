@@ -107,6 +107,10 @@
     $mySort = fn($a, $b) =>  $a <=> $b;
     usort($numbers, $mySort)
 ```
+>* Определение метода POST
+```php
+    if($_SERVER['REQUEST_METHOD'] == 'POST') { ... }
+```
 >* 
 ## Функции
 
@@ -123,6 +127,17 @@ mb_convert_encoding($str, "UTF-8", "cp1251");
 ?>
 ```
 >* trim — Удаляет пробелы (или другие символы) из начала и конца строки
+>* Преобразует специальные символы в HTML-сущности
+```php
+    htmlspecialchars($_POST['name']);
+```
+>* Привести к числу
+```php
+    (int)$_POST['age'];
+    //или
+    1 * $_POST['age'];
+```
+>* 
 
 ## Предопределённые константы
 >* ``` echo 'Версия PHP: ' . PHP_VERSION, '<hr>';```
@@ -137,3 +152,22 @@ mb_convert_encoding($str, "UTF-8", "cp1251");
 >* ``` echo 'Название текущего файла: ' .__FILE__, '<hr>';```
 >* ``` echo 'Название текущей папки: ' .__DIR__, '<hr>';```
 >* ``` echo 'Текущее пространство имён: ' .__NAMESPACE__, '<hr>';```
+>
+
+## Mysql
+>* Создание БД mydb
+```sql
+    CREATE DATABASE mydb
+```
+>*  Создание таблицы tb1
+```sql
+    CREATE TABLE tb1 (
+      col1 INT PRIMARY KEY AUTO_INCREMENT,
+      col2 VARCHAR(100) NOT NULL DEFAULT '',
+      col3 DECIMAL(5,2),
+      col4 DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+```
+>* Самый простой способ работать с БД из PHP
+>* Нужно включить в php.ini модуль php_mysqli.dll
+>* 
