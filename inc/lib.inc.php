@@ -87,11 +87,16 @@
     }
 
     //3.2 5. Создайте функции getParam() и postParam() с объявлением обнуляемого типа
-    function getParam(){
-
+    function getParam($key) : ? string {
+        //? string - обнуляемы тип
+        return $_GET[$key];
+        //return $key;
     }
 
-    function postParam(){
+    //print gettype(getParam(Null));
 
+    function postParam($key) : ? string{
+        return $_POST[$key];
     }
+
 ?>
