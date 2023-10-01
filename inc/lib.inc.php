@@ -44,10 +44,22 @@
     }
 
     function saveOrder($firstName , $lastName , $email , $address){
+        $current_order = file_get_contents(ORDERS);
 
-        $str = "$firstName; $lastName; $email; $address";
-        file_put_contents(ORDERS,date('d/m/y H:i') . ';' .$str);
-        echo $str;
+        if(empty($current_order)){
+            $count = 1;
+        } else{
+            $array_current_order_str =  explode("\n", file_get_contents(ORDERS));
+            $array_current_order = [];
+
+            foreach($array_current_order_str as $str){
+                $per = explode(';',$str);
+                $array_current_order[] = $per;
+            }
+            $count = (int)$array_current_order[0][0] + 1;
+        }
+        $str = "$firstName; $lastName; $email; $address\n$current_order";
+        file_put_contents(ORDERS,$count . ';' . date('d/m/y H:i') . ';' .$str);
 
         return true;
     }

@@ -52,7 +52,9 @@
 
 <?php
 //    echo "<pre>GET: ",print_r($_GET),"</pre>";
-//?>
+      echo "<pre>Post: ",print_r($_POST),"</pre>";
+
+?>
 
 
 <?php include 'inc/nav.inc.php'; ?>

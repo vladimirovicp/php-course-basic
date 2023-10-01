@@ -1,3 +1,16 @@
+<?php
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $firstName = strip_tags(trim($_POST['firstName']));
+        $lastName = strip_tags(trim($_POST['lastName']));
+        $email = strip_tags(trim($_POST['email']));
+        $address = strip_tags(trim($_POST['address']));
+
+        saveOrder($firstName , $lastName , $email , $address);
+    }
+
+?>
+
 <div class="container">
     <h1><?php include "inc/title.inc.php";?></h1>
     <div class="py-5 text-center">
@@ -41,6 +54,7 @@
 
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
+                            <?php global $books; ?>
                             <h6 class="my-0"><?=$books[$i]['title']?></h6>
                             <small class="text-muted"><?=$books[$i]['description']?></small>
                         </div>
@@ -65,18 +79,18 @@
         </div>
         <div class="col-md-6 order-md-1">
             <h4 class="mb-3">Информация</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate method="post">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Имя</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <input type="text" name="firstName" class="form-control" id="firstName" placeholder="" value="   Пётр" required>
                         <div class="invalid-feedback">
                             Укажите корректное имя
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="lastName">Фамилия</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="" value="Владимирович" required>
                         <div class="invalid-feedback">
                             Укажите корректную фамилию
                         </div>
@@ -85,7 +99,7 @@
 
                 <div class="mb-3">
                     <label for="email">Email <span class="text-muted">(опционально)</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" value="vladimirovicp70@gmail.com">
                     <div class="invalid-feedback">
                         Укажите корректный email
                     </div>
@@ -93,7 +107,7 @@
 
                 <div class="mb-3">
                     <label for="address">Адрес доставки</label>
-                    <input type="text" class="form-control" id="address" placeholder="город, улица, дом, квартира" required>
+                    <input type="text" name="address" class="form-control" id="address" placeholder="город, улица, дом, квартира"  value="г. Саратов" required>
                     <div class="invalid-feedback">
                         Укажите адрес доставки
                     </div>
