@@ -34,9 +34,12 @@
             $active = NULL;
             if($page . '.php' === $value)
                 $active = ' active';
-            echo "<li class=\"nav-item{$active}\">";
-            echo "<a class=\"nav-link\" href=\"$value\">$key</a>";
-            echo "</li>";
+                $to_page = trim($value,'.php');
+
+                echo "<li class=\"nav-item{$active}\">";
+                //echo "<a class=\"nav-link\" href=\"$value\">$key</a>";
+                echo "<a class=\"nav-link\" href=\"?page=$to_page\">$key</a>";
+                echo "</li>";
         }
     }
 

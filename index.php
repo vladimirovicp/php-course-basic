@@ -1,12 +1,11 @@
 <?php
     include 'config.php';
-    $page = 'index';
+    //$page = 'index';
+    $page = $_GET['page'] ?? 'index';
     //$page = 'delivery';
     //$page = 'contacts';
     //$page = 'login';
     //$page = 'basket';
-
-
 ?>
 
 <!doctype html>
@@ -50,6 +49,10 @@
     </style>
 </head>
 <body<?php echo date('h') % 2 === 0 ? ' style="background-color: #aad9ab;"' : ''; ?>>
+
+<?php
+//    echo "<pre>GET: ",print_r($_GET),"</pre>";
+//?>
 
 
 <?php include 'inc/nav.inc.php'; ?>
